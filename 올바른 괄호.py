@@ -3,7 +3,7 @@ def solution(s):
     # 맨앞에 ) 
     # 맨뒤에 (
     # (뒤에 ) 아니면 에러 -> "("와")"의 개수가 맞아야함.
-    # count == 0의 리턴 값으로 boolean을 리턴해준다.
+    # count == 0의 리턴 값으로 boolean을 리턴해준다. 
     # return bool
     count = 0
     for i in s:
