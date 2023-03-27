@@ -1,15 +1,23 @@
 def solution():
-    a = int(input())
+    letter = input()
+    n = int(input())
+    stack = []
+    for _ in range(n):
+        command = input().split()
+        if command[0] == "L":
+            if len(letter) != 0:
+                stack.append(letter[-1])
+                letter = letter[:-1]
+        elif  command[0] == "R": 
+            if len(stack) != 0:
+                letter.append(stack[-1])
+                stack.pop()
+        else: # p일 떄 
+            stack.insert(0command[1])
+            print("stack",stack)
+    print([letter]+stack)
+            
+    
+    return
 
-    if a%4 == 0 and a%100 == 0 or a%400 == 0:        
-        print(1)
-    else:
-        print(0)
-    
-    
-
-    
-
-    return 
-    
 solution()
