@@ -1,0 +1,47 @@
+import sys
+    
+def main():
+    num = int(input())
+    cnt = 0
+    list = []
+    for i in range(num):
+        list.append(int(input()))
+    if num == 1 :
+        return print(cnt)
+    me = list[0]
+    other = list[1:]
+    while True:
+        if me > max(other):
+            break
+        else:                        
+            maxIndex = other.index(max(other))            
+            print(other)
+            other[maxIndex] -= 1             
+            me += 1
+            cnt += 1
+    return print(cnt)
+
+if __name__ == "__main__":
+    main()
+
+더 깔끔한 코드 
+
+```
+n = int(input())
+candidate = []
+count = 0
+
+for _ in range(n):
+    candidate.append(int(input()))
+
+while (1):
+    if (candidate[0] == max(candidate) and candidate.count(max(candidate)) == 1): # 길이가 1일 때의 예외처리가 여기에 들어가면 되는거였다.
+        break
+
+    i = candidate.index(max(candidate), 1, n) # max에 인덱스 설정이 가능한줄 몰랐다. 
+    candidate[i] -= 1
+    candidate[0] += 1
+    count += 1
+
+print(count)
+```
