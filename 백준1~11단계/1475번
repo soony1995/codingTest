@@ -1,0 +1,19 @@
+import sys
+    
+def main():
+    n = input() 
+    list = [0]*9   # 가장 간단하게 key가 숫자인 경우에 dictionary를 만들 수 있는 방법이다.
+    for i in n:    # iterator는 int를 돌리지 못한다.
+        index = int(i)
+        if index == 9:     
+            index = 6
+        list[index] += 1
+        
+    list[6] = (list[6]+1)/2
+    
+    print(max(list))
+
+if __name__ == "__main__":
+    main()
+
+
