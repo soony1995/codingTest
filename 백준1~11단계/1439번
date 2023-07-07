@@ -1,0 +1,14 @@
+S = input()
+count = 0
+for i in range(len(S)-1):
+    if S[i] != S[i+1]:
+        count += 1
+print((count + 1) // 2)
+
+// 이 문제는 특정 유형이 있는게 아니라, 직관으로 푸는 문제처럼 보였다. 
+
+for i in range(len(S)-1):
+    if S[i] != S[i+1]:
+        count += 1
+
+        전 것과 현재것을 비교할 때에는 이런식으로 비교해보자.
